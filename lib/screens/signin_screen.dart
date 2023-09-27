@@ -12,6 +12,7 @@ class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SignInScreenState createState() => _SignInScreenState();
 }
 
@@ -60,7 +61,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomeScreen()));
+                            builder: (context) => const HomeScreen(
+                                  title: '',
+                                )));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
